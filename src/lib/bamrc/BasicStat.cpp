@@ -75,7 +75,7 @@ void BasicStat::process_read(bam_pileup1_t const* base) {
 
     //grab the single ended mapping qualities for testing
     if(base->b->core.flag & BAM_FPROPER_PAIR) {
-        uint8_t *sm_tag_ptr = bam_aux_get(base->b, "SM");
+        uint8_t *sm_tag_ptr = bam_aux_get(base->b, "AS");
         if(sm_tag_ptr) {
             int32_t single_ended_map_qual = bam_aux2i(sm_tag_ptr);
             sum_single_ended_map_qualities += single_ended_map_qual;
